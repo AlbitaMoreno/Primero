@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "ejemplo"
+#primera y segunda muestran lo mismo
+let w=3+2
+echo $w
+let w='3 + 2'
+echo $w
+#tercera y cuarta no muestran lo mismo
+let w='(4+5)*6'
+echo $w
+let "w=4+5*6"
+#cuarta y quinta muestran lo mismo
+echo $w
+let w=4+5*6
+echo $w
+y=7
+let w=y%5
+echo $w
+

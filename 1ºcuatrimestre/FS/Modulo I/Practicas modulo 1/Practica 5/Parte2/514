@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#donde SCRIPT contiene sólo el nombre del guión
+#${var##Patron} actúa eliminando de $var aquella parte
+#que cumpla de $Patron desde el principio de $var
+#En este caso: elimina todo lo que precede al
+#último slash “/"
+declare -rx SCRIPT=${0##*/}
+if rm ${1} ; 
+	then printf "%s\n" "$SCRIPT: archivo temporal borrado"
+else
+	STATUS=177
+	printf "%s – código de finalizacion %d\n" \
+	"$SCRIPT:$LINENO no es posible borrar archivo" $STATUS
+fi 2> /dev/null

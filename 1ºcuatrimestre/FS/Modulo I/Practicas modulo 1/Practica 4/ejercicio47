@@ -1,0 +1,19 @@
+#!/bin/bash
+
+VAR1="hola"
+VAR2="adios"
+VAR3="14"
+
+printf "\n%15d $VAR1 $VAR2 $VAR3\n"
+
+#para el apartado c) borrar VAR2 uso unset
+
+unset VAR2
+printf "\n%15d $VAR1 $VAR2 $VAR3\n"
+
+#para el apartado e) crear una variable tipo vector con los valores de 
+#las variables
+VAR4=($VAR1 adios $VAR3)
+printf "\n${VAR4[1]}\n"
+
+

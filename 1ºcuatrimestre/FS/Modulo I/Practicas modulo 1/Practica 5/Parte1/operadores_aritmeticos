@@ -1,0 +1,41 @@
+#!/bin/bash
+#ejercicio 5.2
+
+v=1
+echo $v		#muestra el valor de v
+echo $((v++))	#incrementa el valor de v pero no lo muestra
+echo $v		#muestra el nuevo valor de v
+echo $((++v))	#vuelve a incrementar v pero esta vez si lo muestra
+echo $v		#valor final de v
+
+#ejercicio 5.3
+
+echo "paso al ejercicio 5.3"
+x=4
+y=2
+echo "uso x/=y" 
+aux=`expr $x/=$y`
+echo $aux
+echo "uso x=x/y"
+x=`expr $x/$y`
+echo $x
+
+#ejercicio 5.4
+echo "paso a ejercicio 5.4"
+echo "ejemplo sobre el que se hace el ejercicio" 
+echo 6/5|bc -l
+echo "utilizando comillas dobles con todo lo que sigue a echo"
+echo "6/5|bc -l"	#mostrara por pantalla lo que hay en las comillas sin ejecutar ninguna instrucción
+
+echo `6/5|bc -l`	#error
+
+echo "acotando solo la expresion aritmetica"
+echo "6/5"|bc -l	#muestra el resultado
+echo `6/5`|bc -l	#error
+
+#ejercicio 5.5
+
+echo "paso al ejercicio 5.5"
+echo "(3-2)/5"|bc -l	#solucion .200000000000000...
+
+

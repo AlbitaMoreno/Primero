@@ -1,0 +1,18 @@
+#!/bin/bash
+
+read -p "Pulse una tecla y determinare en que fila esta " TECLA
+
+case $TECLA in
+	[01-9]) 
+		printf "$TECLA esta en la fila 1\n"
+		;;
+	[qwertyuiopQWERTYUIOP])
+		printf "$TECLA esta en la fila 2\n"
+		;;
+	[asdfghjklñASDFGHJKLÑ])
+		printf "$TECLA esta en la fila 3\n"
+		;;
+	[zxcvbnmZXCVBNM])
+		printf "$TECLA esta en la fila 4\n"
+		;;
+esac 

@@ -1,0 +1,9 @@
+#!/bin/bash
+printf "Introduce el nombre de un archivo: \n"
+read archivo
+printf "El nombre del archivo es %s\n" $archivo
+
+#lo cual es equivalente a:
+
+read -p "Introduzca el nombre del archivo: " archivo
+printf "\nEl nombre del archivo es %s\n" $archivo

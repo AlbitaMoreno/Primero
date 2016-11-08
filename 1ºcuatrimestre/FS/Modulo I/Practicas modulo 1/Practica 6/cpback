@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#1º pasar un argumento(s), directorio o lista de archivos
+#2º comprimirlos en un archivo con nombre copiaYYMMDD , dento de un directorio CopiasSeguridad 
+#COMPROBACIONES: los argumentos existen, el directorio destino existe y sino lo crea
+
+destino="CopiasSeguridad"
+
+if [ $# -ge 1 ]
+	then
+	
+	if test -d $destino 
+		then
+		echo "CopiasSeguridad existe"
+	else
+		mkdir CopiasSeguridad
+		echo "Se ha creado con exito CopiasSeguridad"
+	fi
+
+	if test -e $1 
+		then 
+		tar -cvf "./$destino/copia`date +"%Y%m%d"`.tar" $@
+		gzip "./$destino/copia`date +"%Y%m%d"`.tar" 
+	fi
+else
+	printf "No ha introducido argumentos\n\n"
+fi

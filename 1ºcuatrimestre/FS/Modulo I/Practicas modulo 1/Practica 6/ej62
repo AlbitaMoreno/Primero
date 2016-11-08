@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -eq 1 ];
+then
+	if test -d $1;
+	then
+		for archivo in `ls -l $1`
+		do
+			if test -d $archivo ;
+			then printf "El $archivo es un directorio\n";
+			elif test -h $archivo;
+			then printf "El $archivo es un enlace simbolico\n";
+			elif test -f $archivo;
+			then printf "El $archivo es un archivo regular plano\n";
+			fi
+
+		done
+	else
+		printf "\n$directorio no es un directorio\n";
+	fi
+else 
+	printf "\nNo ha introducido ningun parametro\n";
+fi

@@ -1,0 +1,32 @@
+#Escriba un guion que acepte el nombre de un directorio como argumento y muestre como resultado el nombre de todos y cada uno de los archivos del mismo y una leyenda que diga "Directorio", "Enlace" o "Archivo regular", según corresponda. 
+#Incluya la comprobación necesaria sobre el argumento, es decir, determine si el
+nombre aportado se trata de un directorio existente.
+#
+#
+#
+#!/bin/bash
+printf "Introduzca el nombre de un directorio: "
+read Directorio
+#
+#Comprobacion el direc. existe y se tiene permiso de lectura sobre el.
+#
+if ! test -d $directorio ;then
+	printf "El directorio '$1' no existe"
+	exit 1
+fi
+#
+#Lista todos los archivos del directorio introducido
+#
+for Directorio in $(ls)
+do
+	file $Directorio
+	printf "El nombre de los archivos del directorio son: "$1
+	if test -d $1 ;then
+		printf "'$1' es un directorio de '$Directorio' "
+	fi
+	if test -h $1 ;then
+		printf "'$1' es un enlace del '$Directorio' "
+	else
+		printf "'$1' es un archivo regular de '$Directorio'"
+	fi
+done

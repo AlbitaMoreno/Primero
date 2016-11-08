@@ -1,0 +1,20 @@
+#!/bin/bash
+test -d /bin
+echo $?
+# comprueba si /bin es un directorio
+#FALSE
+# nos muestra el estado de la última orden ejecutada, aunque
+# usado después de test o [ ] da 0 si la evaluación era verdadera
+[ -w /bin ]
+echo $?
+# comprueba si tenemos permiso de escritura en /bin
+#TRUE
+# usado después de test o [ ] da 1 si la evaluación era falsa
+test -f /bin/cat
+echo $?
+# comprueba si el archivo /bin/cat existe y es plano
+#FALSE
+[ /bin/cat -nt /bin/zz ]
+# comprueba si /bin/cat es más reciente que /bin/zz
+echo $?
+# la evaluación devuelve 0 porque /bin/zz no existe

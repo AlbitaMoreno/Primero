@@ -1,0 +1,16 @@
+#!/bin/bash
+echo = ----------------5.13-------------;
+echo =  --------------------------------;
+echo = ---------------------------------;
+
+anio=365
+dia=`date +%j`
+restantes=`expr $anio - $dia`
+
+printf "Faltan $restantes dias hasta el fin de año\n"
+if [ `expr $restantes % 5` == 0 ]
+	then printf "Ademas, ese numero es multiplo de 5\n"
+else
+	printf "Pero ese numero no es multiplo de 5\n"
+fi
+

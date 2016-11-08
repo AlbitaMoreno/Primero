@@ -1,0 +1,22 @@
+break 15
+run
+info locals
+p/x $pc
+p/x $sp
+break 29
+run
+info locals
+p/x $pc
+p/x $sp
+break 42
+run
+info locals
+p/x $pc
+p/x $sp
+break 47 
+run
+info locals
+p/x $pc
+p/x $sp
+
+delete breakpoints 2 3 4

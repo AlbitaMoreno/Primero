@@ -1,0 +1,5 @@
+#!/bin/bash
+
+variable=$1
+
+printf "Hola: $variable\n"

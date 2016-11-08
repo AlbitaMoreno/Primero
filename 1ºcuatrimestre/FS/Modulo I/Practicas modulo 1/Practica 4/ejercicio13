@@ -1,0 +1,7 @@
+#!/bin/bash
+#primero listo los directorios de home,al resultado de esto le aplico #la orden grep -e busco segun un determinado patron y cuento los #resultados de la grep -e.
+ 
+num_archivos=`ls -l $HOME|grep -e '-[-w][-x]$'|wc -l`
+
+echo "Hay $num_archivos archivos que no tienen permiso de lectura para el resto de usuarios"
+

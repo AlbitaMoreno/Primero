@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#CARACTERISITCAS
+# 1º <dirname> directorio destino (si no existe se crea)
+# 2º <num_files> num archivos que se han de crear
+# 3º <basefilename> nombre base de los archivos
+#
+# COMPROBACIONES
+# 1º que se han introducido tres argumentos, y que el num_files esta entre 1 y 99
+# 2º si el dirname no existe crearlo, con permisos de lectura y escritura para el $USER
+# 3º dentro de dirname crear archivos vacios con basefilename seguido de un numero desde el 01 hasta nu_files
+
+if [ $# -eq 3 ]
+	then
+	dirname=$1
+	num_files=$2
+	basefilename="$3"
+	
+	if [[ $num_files -gt 99 ]] 
+		then printf "Segundo arguemento no valido, introduzca un numero de archivos mas pequeño\n"
+	else
+	
+		if test -d $dirname
+			then printf "Existe $dirname\n"
+		else
+			mkdir $dirname
+			printf "$dirname creado\n"
+			chmod u+r,u+w $dirname
+			printf "permisos asignados correctamente a $dirname\n"
+		fi
+
+		for i in `seq 1 1 $num_files`
+		do
+			touch "./$dirname/$basefilename$i"
+		done
+		printf "Operaciones realizadas con exito\n"
+	fi
+else
+	printf "Numero de argumentos invalidos\n"
+fi

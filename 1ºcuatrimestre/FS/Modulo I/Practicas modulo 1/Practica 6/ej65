@@ -1,0 +1,16 @@
+#!/bin/bash
+
+num=0
+
+while [ $num -lt 1 ] || [ $num -gt 10 ]
+do
+	printf "Mete un numero del 1 al 10\n"
+	read num
+
+	if [ $num -gt 10 ];
+		then printf "Introduce un numero menor por favor\n"
+	fi
+	if [ $num -lt 1 ];
+		then printf "Introduce un numero mayor, por favor\n"
+	fi
+done

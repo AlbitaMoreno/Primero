@@ -1,0 +1,4 @@
+#!/bin/bash
+
+printf "El directorio $HOME contiene los siguientes archivos:\n"
+ls -l $1

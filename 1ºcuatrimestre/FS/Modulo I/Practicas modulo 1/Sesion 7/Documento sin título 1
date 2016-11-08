@@ -1,0 +1,11 @@
+#!/bin/bash
+
+num = 1
+while :
+do
+	num = $[ $num + 1 ]
+	printf "numero: " $num
+	sleep 1s 
+done
+
+

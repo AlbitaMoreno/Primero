@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "ejercicio 5.9"
+
+#asignar a una variable el resultado de comprobar si el archivo dado como parámetro es plano y tiene permiso de ejecución sobre él
+
+var1=`(test -f $1 && test -x $1) && echo "true" || echo "false"`
+echo $var1
+
+#asignar a otra variable el resultado de comprobar si el archivo es un enlace simbólico
+
+var2=`test -h $1 && echo "true" || echo "false"`
+echo $var2 
+
+#Pruebe el guion ejecutándolo con /bin/cat y también con /bin/rnano.
+
+#si usamos /bin/cat la primera evaluacion es true mientra que la segunda es false, ya que no es un enlace simbolico
+
+#mientras que con /bin/rnano las dos evaluacion son true

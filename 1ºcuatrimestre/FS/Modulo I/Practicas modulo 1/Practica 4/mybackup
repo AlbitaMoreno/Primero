@@ -1,0 +1,4 @@
+#!/bin/bash
+printf "haciendo copia de seguridad en $HOME...\n"
+cp -r $HOME/* /tmp/backupuser/
+printf "copia realizada"

@@ -1,0 +1,43 @@
+#!/bin/bash
+
+mM=(ENE FEB MAR ABAR AMY JUN JUL AGO SEP OCT NOV DIC)
+mm=(ene feb mar abr may jun jul ago sep oct nov dic)
+
+case $1 in
+	1|${mM[0]}|${mm[0]})
+		printf "Mes: Enero\n"
+		;;
+	2|${mM[1]}|${mm[1]})
+		printf "Mes: Febrero\n"
+		;;
+	3|${mM[2]}|${mm[2]})
+		printf "Mes: Marzo\n"
+		;;
+	4|${mM[3]}|${mm[3]})
+		printf "Mes: Abril\n"
+		;;
+	5|${mM[4]}|${mm[4]})
+		printf "Mes: Mayo\n"
+		;;
+	6|${mM[5]}|${mm[5]})
+		printf "Mes: Junio\n"
+		;;
+	7|${mM[6]}|${mm[6]})
+		printf "Mes: Julio\n"
+		;;
+	8|${mM[7]}|${mm[7]})
+		printf "Mes: Agosto\n"
+		;;
+	9|${mM[8]}|${mm[8]})
+		printf "Mes: Septiembre\n"
+		;;
+	10|${mM[9]}|${mm[9]})
+		printf "Mes: Octubre\n"
+		;;
+	11|${mM[10]}|${mm[10]})
+		printf "Mes: Noviembre\n"
+		;;
+	12|${mM[11]}|${mm[11]})
+		printf "Mes: Diciembre\n"
+		;;
+esac

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#Ejercicio 4.14. Modifique el ejercicio 8 de forma que, en vez de un alias, sea un guion llamado numE el que devuelva el número de archivos que existen en el directorio que se le pase como argumento.
+
+direc=$1
+resultado=`ls -l $1| wc -l`
+printf "\n$resultado\n"
+
+
+

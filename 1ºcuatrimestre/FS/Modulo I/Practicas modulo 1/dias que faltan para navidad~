@@ -1,0 +1,18 @@
+#!/bin/bash
+#Navidad es el 23 de diciembre.
+
+echo = ----------------5.13-------------;
+echo =  --------------------------------;
+echo = ---------------------------------;
+	
+declare -i diasfinano=$[365 - $( date +%j)]
+declare -i numdias=$[$diasfinano%5]
+
+if [$numdias == 0];then
+	echo "faltan $numdias y es multiplo de 5 " 
+
+else 
+	echo "Faltan $diasfinano dias para Navidad y no es multiplo de 5"
+
+fi
+ 

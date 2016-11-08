@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+#EJEMPLO 1: muestra los archivos del directorio junto con el tipo que son
+
+for archivo in $(ls)
+do
+	file $archivo
+done
+
+#EJEMPLO 2: muestra los 5 primeros numeros impares
+
+for NUM in `seq 0 1 4`;
+do
+	let "NUM=$NUM * 2 + 1"
+	printf "Numero impar %d\n" $NUM
+done
+
+#EJEMPLO 3: un bucle for en C
+
+for((CONTADOR=1; CONTADOR <10; CONTADOR++)) ; do
+	printf "CONTADOR vale ahora: %d\n" $CONTADOR
+done
+

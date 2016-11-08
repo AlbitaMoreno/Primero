@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if test -O $1;
+	then printf "Soy el propietario de $1";
+	if test -r $1;
+		then printf " y tengo permiso de lectura sobre $1\n";
+	else 
+		printf "no tengo permiso de lectura sobre $1\n";
+	fi
+else
+	printf "No soy propietario de $1\n";
+fi

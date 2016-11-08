@@ -1,0 +1,131 @@
+9.1
+
+albamo@ei140054:~/sesion09$ gdb ejm1
+(gdb) run
+Starting program: /home/albamo/sesion09/ejm1 
+Hello World!
+The factorial of 7 is 5040
+[Inferior 1 (process 3518) exited normally]
+
+
+9.2
+
+(gdb) list factorial.cpp:factorial
+
+1	#include "functions.h"
+2	
+3	int factorial(int n){
+4	    if(n!=1){
+5		return(n * factorial(n-1));
+6	    }
+7	    else return 1;
+8	}
+
+
+(gdb) list main.cpp:main
+
+1	#include <iostream>
+2	#include "functions.h"
+3	
+4	using namespace std;
+5	
+6	int main(){
+7	    print_hello();
+8	    cout << endl;
+9	    cout << "The factorial of 7 is " << factorial(7) << endl;
+10	    return 0;
+
+
+9.3
+
+(gdb) break 15
+Punto de interrupción 1 at 0x804864c: file mainsesion09a.cpp, line 15.
+(gdb) run
+Starting program: /home/albamo/sesion09/ej3 
+
+Breakpoint 1, cuenta (y=0) at mainsesion09a.cpp:15
+5	   return tmp;
+(gdb) info locals
+tmp = 2
+(gdb) p/x $pc
+$1 = 0x804864c
+(gdb) p/x $sp
+$2 = 0xbffff4e8
+
+(gdb) Breakpoint 2, multiplica (x=3, y=2) at mainsesion09a.cpp:29
+29	      final = final + y;
+(gdb) info locals
+final = 0
+i = 0
+(gdb) p/x $pc
+$3 = 0x8048667
+(gdb) p/x $ps
+$4 = 0x293
+
+Breakpoint 3, main () at mainsesion09a.cpp:42
+42	   final1 = multiplica(3, 2);
+(gdb) info locals
+final1 = 134514523
+final2 = -1209188352
+i = -1207963648
+(gdb) p/x $pc
+$5 = 0x8048687
+(gdb) p/x $ps
+$6 = 0x286
+
+(gdb) break 46
+Punto de interrupción 4 at 0x80486a9: file mainsesion09a.cpp, line 46.
+(gdb) continue
+Continuando.
+
+Breakpoint 2, multiplica (x=3, y=2) at mainsesion09a.cpp:30
+30	      final = final + y;
+(gdb) info locals
+final = 0
+i = 0
+
+
+9.4
+Breakpoint 1, main () at mainsesion09a.cpp:48
+48	      final2 = cuenta(i);
+(gdb) step
+cuenta (y=0) at mainsesion09a.cpp:13
+13	   tmp = y + 2; 
+(gdb) step
+17	   return tmp;
+(gdb) step
+18	}
+(gdb) step
+main () at mainsesion09a.cpp:46
+46	   for (i = 0; i < 100; i ++)
+(gdb) step
+
+Breakpoint 1, main () at mainsesion09a.cpp:48
+48	      final2 = cuenta(i);
+(gdb) info locals
+final1 = 6
+final2 = 2
+i = 1
+(gdb) step
+cuenta (y=1) at mainsesion09a.cpp:13
+13	   tmp = y + 2; 
+(gdb) step
+17	   return tmp;
+(gdb) step
+18	}
+(gdb) step
+main () at mainsesion09a.cpp:46
+46	   for (i = 0; i < 100; i ++)
+(gdb) step
+
+Breakpoint 1, main () at mainsesion09a.cpp:48
+48	      final2 = cuenta(i);
+(gdb) info locals
+final1 = 6
+final2 = 3
+i = 2
+Para el codigo en ensamblador se usa dissemble
+
+9.5
+
+delete breakpoint 2 3 4

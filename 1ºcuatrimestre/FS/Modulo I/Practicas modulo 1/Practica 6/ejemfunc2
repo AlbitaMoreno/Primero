@@ -1,0 +1,9 @@
+#!/bin/bash
+
+_dlb(){
+	read -p "Introduce un numero " dato
+	echo $[ $dato * 2]
+}
+
+resultado=`_dlb`
+echo "El nuevo resultado es $resultado"

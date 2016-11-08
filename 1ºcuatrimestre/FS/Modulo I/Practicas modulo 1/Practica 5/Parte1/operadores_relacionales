@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "iguales?"
+echo $[$1==$2]
+
+echo " $1 menor que $2 "
+echo $[$1<$2]
+
+echo " $1 mayor que $2 "
+echo $[$1>$2]
+
+
+

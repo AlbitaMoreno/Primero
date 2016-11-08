@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#defino la funcion uso 
+
+_uso(){
+	echo "Uso: $0 archivo"
+	exit 1
+}
+
+#defino si_existe_file
+
+_si_existe_file(){
+	local f=$1
+	[ -f "$f" ] && return 0 || return 1
+}
+#no hay paraetros
+[ $# -eq 0 ] && _uso
+
+if ( _si_existe_file "$1" )	
+	then printf "El archivo existe\n"
+else 
+	printf "El archivo no existe\n"
+fi	
